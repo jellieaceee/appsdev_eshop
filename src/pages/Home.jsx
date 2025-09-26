@@ -103,21 +103,21 @@ const Home = () => {
 
       {/* Sort */}
       <div className="sort-filter-container">
-      <div className="sort-container">
-        <label>Sort by: </label>
-        <select value={sortOption} onChange={handleSortChange}>
-          <option value="">None</option>
-          <option value="a-z">A → Z</option>
-          <option value="z-a">Z → A</option>
-          <option value="price-low-high">Price: Low → High</option>
-          <option value="price-high-low">Price: High → Low</option>
-          <option value="latest">Latest → Oldest</option>
-          <option value="oldest">Oldest → Latest</option>
-        </select>
-      </div>
+        <div className="sort-container">
+          <label>Sort by: </label>
+          <select value={sortOption} onChange={handleSortChange}>
+            <option value="">None</option>
+            <option value="a-z">A → Z</option>
+            <option value="z-a">Z → A</option>
+            <option value="price-low-high">Price: Low → High</option>
+            <option value="price-high-low">Price: High → Low</option>
+            <option value="latest">Latest → Oldest</option>
+            <option value="oldest">Oldest → Latest</option>
+          </select>
+        </div>
 
-      {/* Filters */}
-      <Filters products={products} onFilter={setDisplayProducts} />
+        {/* Filters */}
+        <Filters products={products} onFilter={setDisplayProducts} />
       </div>
       <div className='h1'>
         <h1>The Starlink Shop</h1>
@@ -129,9 +129,9 @@ const Home = () => {
           <div className="product-card" key={product.id}>
             <img src={product.thumbnail} alt={product.title} className="product-img" />
             <h3>{product.title}</h3>
-            <p>${product.price}</p>
+            <p>{product.price}</p>
             <button
-              onClick={() => navigate(/product/${product.id}, { state: { product } })}
+              onClick={() => navigate(`/product/${product.id}`, { state: { product } })}
               className="buy-btn"
             >
               Buy Now
@@ -141,7 +141,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-       <footer style={{
+      <footer style={{
         backgroundColor: '#6cd4f3',
         color: '#fff',
         textAlign: 'center',
