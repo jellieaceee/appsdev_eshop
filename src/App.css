@@ -109,32 +109,62 @@ nav .nav-links button:hover {
   max-width: 600px;
 }
 
+/* Make search input container relative for positioning children */
+.search-input-container {
+  position: relative;
+  display: flex;
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+
+/* Input field with space for the X button */
 .search-input {
   flex: 1;
-  padding: 12px 15px;
+  padding: 12px 40px 12px 15px; /* add right padding */
   font-size: 16px;
   border: 2px solid #ccc;
-  border-radius: 25px; /* fully rounded */
+  border-radius: 25px;
   outline: none;
-  border-right: none; /* optional, to remove double border where input touches button */
 }
 
-.search-button {
-  padding: 12px 25px;
-  border-radius: 25px; /* fully rounded */
-  border: 2px solid #6cd4f3; /* match input border */
-  background-color: #6cd4f3;
-  color: white;
-  font-weight: bold;
+ .search-button { padding: 12px 25px; border-radius: 25px; /* fully rounded */ border: 2px solid #6cd4f3; /* match input border */ background-color: #6cd4f3; color: white; font-weight: bold; cursor: pointer; transition: background 0.3s; margin-left: -2px; /* optional: collapse overlapping borders */ }
+/* X button inside input */
+.clear-btn {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
   cursor: pointer;
-  transition: background 0.3s;
-  margin-left: -2px; /* optional: collapse overlapping borders */
+  display: inline-block;
 }
 
-
-.search-button:hover {
-  background-color: #0056b3;
+/* Suggestions dropdown */
+.suggestions {
+  position: absolute;
+  top: 100%; /* directly under input */
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
+
+.suggestions div {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.suggestions div:hover {
+  background: #f5f5f5;
+}
+
 
 @media (max-width: 768px) {
   .search-input-container {
@@ -327,7 +357,7 @@ nav .nav-links button:hover {
 }
 
 .add-cart {
-  background: #28a745;
+  background: #0056b3;
   color: white;
 }
 
@@ -378,14 +408,14 @@ nav .nav-links button:hover {
   padding: 5px 10px;
   border-radius: 10px;
   border: none;
-  background-color: #6cd4f3;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
 .cart-item button:hover {
-  background-color: #57b6d9;
+  background-color: #007bff;
 }
 
 .total-amount {
@@ -401,7 +431,7 @@ nav .nav-links button:hover {
   width: 100%;
   border-radius: 25px;
   border: none;
-  background-color: #6cd4f3;
+  background-color: #007bff;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
