@@ -1,4 +1,3 @@
-// src/pages/Cart.jsx
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +21,7 @@ const Cart = () => {
       return;
     }
 
-    // Mark selected products as purchased
+   
     selectedIds.forEach(id => {
       const product = cart.find(p => p.id === id);
       if (product) purchaseProduct(product);
@@ -43,7 +42,7 @@ const Cart = () => {
   const totalAmount = cart
     .filter(p => selectedIds.includes(p.id))
     .reduce((sum, p) => sum + p.price, 0)
-    .toFixed(2); // 2 decimal points
+    .toFixed(2); 
 
   return (
     <div style={{ padding: '40px', maxWidth: '1000px', margin: '0 auto' }}>

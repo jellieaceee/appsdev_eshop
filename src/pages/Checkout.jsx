@@ -19,7 +19,7 @@ const Checkout = () => {
       </div>
     );
   }
-
+  
   const handleConfirmCOD = () => {
     purchaseProduct(product);
     alert('✅ Thank you for purchasing! Your product will be delivered soon.');
